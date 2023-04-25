@@ -2,9 +2,8 @@ import {
   Navigate,
   createBrowserRouter,
 } from "react-router-dom";
-import { Home, NotFound } from "./pages";
+import { Home, NotFound, Post } from "./pages";
 import { DefaultLayout } from "./ui/layouts";
-
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +11,7 @@ export const router = createBrowserRouter([
       element: <DefaultLayout />,
       children: [
         { path: '', element: <Home /> },
+        { path: 'post/:postId', element: <Post /> },
         { path: '404', element: <NotFound /> },
       ],
   },
