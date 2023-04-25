@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { API_URL } from '../Home/Home';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { IPost } from '../../utils/types';
 
 export const Post: React.FC = () => {
@@ -18,8 +18,9 @@ export const Post: React.FC = () => {
 
   return post && (
     <>
-      <p>Post</p>
-      <p>{post.title}</p>
+      <h2>{post.title}</h2>
+      <Link to="/" className="btn">Go back</Link>
+      <p>{post.body}</p>
     </>
   );
 }
