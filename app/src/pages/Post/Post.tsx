@@ -4,15 +4,15 @@ import { Link, useParams } from 'react-router-dom';
 import { IPost } from '../../utils/types';
 
 export const Post: React.FC = () => {
-  const [post, setPost] = React.useState<IPost | null>(localStorage.getItem('post') ? JSON.parse(localStorage.getItem('post') || '') : null);
   const { postId } = useParams();
+  const [post, setPost] = React.useState<IPost | null>(localStorage.getItem(`post-${postId}`) ? JSON.parse(localStorage.getItem(`post-${postId}`) || '') : null);
 
   useEffect(() => {
     fetch(`${API_URL}/${postId}`)
       .then((response) => response.json())
       .then((data) => {
         setPost(data);
-        localStorage.setItem('post', JSON.stringify(data));
+        localStorage.setItem(`post-${postId}`, JSON.stringify(data));
       });
   }, [postId]);
 
