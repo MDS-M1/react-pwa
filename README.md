@@ -42,7 +42,7 @@ cd app && npm install
 ```sh
 docker compose up -d
 ```
-*`-d` is optional (used for detached container from your terminal)
+*`-d` is optional (used for detached container from your terminal)*
 
 ## Contributors
 
