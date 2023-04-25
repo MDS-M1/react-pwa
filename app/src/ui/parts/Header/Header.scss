@@ -1,0 +1,14 @@
+@import '../../../assets/css/_colors.scss';
+
+header {
+  background-image: linear-gradient(to bottom, $primary, #00695C);
+  padding: 1em 0;
+  .header--content {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    h1 {
+      margin-bottom: .6em;
+    }
+  }
+}
